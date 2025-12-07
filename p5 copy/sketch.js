@@ -1,29 +1,26 @@
 //let titleImput;
 //let typedTitle = "";
+let artboardColor;
+let 
 
 function preload(){
 	bgColor = loadImage('bgcolor.jpg');
 	bgImage = loadImage('bgImage.png');
 	person = loadImage('people.png');
-	objects = loadImage('object.png');
+	objects = loadImage('object.jpg');
 	shapes = loadImage('shapes.jpg');
 }
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
 	background(0);
-	
-	/*titleInput = createInput('"Title"'); 
-	titleInput.position(100, 80);
-	titleInput.style("opacity", "0");
-	titleInput.style("border", "none");
-	titleInput.style("background", "transparent");
-	
-	titleInput.input(updateTitle);
- */
+	home();
 }
 
 function draw() {
+}
+
+function home(){
 	fill(255);
 	noStroke();
 	rect(100, 100, 1100, 700);//artboard
@@ -39,10 +36,6 @@ function draw() {
 	textStyle(BOLD);
 	text('"TITLE"', 100, 80);
 
-	fill(0);//outline
-	stroke(255);
-	rect(1365, 130, 390, 35)
-
 	fill(255);
 	noStroke();
 	textFont('Helvetica Neue');//background color
@@ -50,10 +43,6 @@ function draw() {
 	textStyle(NORMAL);
 	text('BACKGROUND COLOR', 1370, 160);
 	
-	fill(0);// bg image outline
-	stroke(255);
-	rect(1365, 280, 380, 35)
-
 	fill(255);
 	noStroke();
 	textFont('Helvetica Neue');//background image
@@ -61,20 +50,12 @@ function draw() {
 	textStyle(NORMAL);
 	text('BACKGROUND IMAGE', 1370, 310);
 
-	fill(0);// people outline
-	stroke(255);
-	rect(1365, 430, 146, 35)
-
 	fill(255);
 	noStroke();
 	textFont('Helvetica Neue');//people
 	textSize(35);
 	textStyle(NORMAL);
 	text('PEOPLE', 1370, 460);
-
-	noFill();// object outline
-	stroke(255);
-	rect(1365, 580, 168, 35)
 	
 	fill(255);
 	noStroke();
@@ -83,31 +64,92 @@ function draw() {
 	textStyle(NORMAL);
 	text('OBJECTS', 1370, 610);
 
-	fill(0);// shapes outline
-	stroke(255);
-	rect(1365, 730, 148, 35)
-
 	fill(255);
 	noStroke();
 	textFont('Helvetica Neue');//shapes
 	textSize(35);
 	textStyle(NORMAL);
 	text('SHAPES', 1370, 760);
-
-	//if (mouseIsPressed && mouseX > txtX && mouseX < txtX + textWidth(myText) && mouseY > txtY - textAscent() && mouseY < txtY + textDescent()) {
-
 }
 
-/*function updateTitle() {
-  typedTitle = this.value();
+function mousePressed(){
+	if (mouseX > 1370 && mouseX < 1700 && mouseY > 130 && mouseY < 180){
+		background(0);
+		backgroundColor();
+	}
+	if (mouseX > 1370 && mouseX < 1700 && mouseY > 280 && mouseY < 330){
+		background(0);
+		backgroundImage();
+	}
+	if (mouseX > 1370 && mouseX < 1700 && mouseY > 430 && mouseY < 480){
+		background(0);
+		people();
+	}
+	if (mouseX > 1370 && mouseX < 1700 && mouseY > 580 && mouseY < 630){
+		background(0);
+		object();
+	}
+	if (mouseX > 1370 && mouseX < 1700 && mouseY > 730 && mouseY < 780){
+		background(0);
+		shape();
+	}
 }
-*/
+
 function backgroundColor(){
 	fill(255);
 	textFont('Helvetica Neue');
 	textSize(50);
 	textStyle(BOLD);
 	text('BACKGROUND COLOR', 100, 80);
+
+	fill(255, 33, 74);//red
+	stroke(255);
+	rect(100, 150, 250, 250);
+
+	fill(245, 130, 64);//orange
+	stroke(255);
+	rect(400, 150, 250, 250);	
+
+	fill(255, 230, 102);//yellow
+	stroke(255);
+	rect(700, 150, 250, 250);	
+
+	fill(190, 237, 114);//green
+	stroke(255);
+	rect(1000, 150, 250, 250);	
+
+	fill(157, 245, 180);//mint
+	stroke(255);
+	rect(1300, 150, 250, 250);	
+
+	fill(129, 240, 227);//teal
+	stroke(255);
+	rect(1600, 150, 250, 250);	
+
+	fill(117, 211, 240);// baby blue
+	stroke(255);
+	rect(100, 450, 250, 250);
+
+	fill(76, 135, 245);//blue
+	stroke(255);
+	rect(400, 450, 250, 250);	
+
+	fill(167, 172, 235);//violet
+	stroke(255);
+	rect(700, 450, 250, 250);	
+
+	fill(141, 91, 189);//purple
+	stroke(255);
+	rect(1000, 450, 250, 250);	
+
+	fill(239, 127, 245);//fuscia
+	stroke(255);
+	rect(1300, 450, 250, 250);	
+
+	fill(217, 78, 166);//pink
+	stroke(255);
+	rect(1600, 450, 250, 250);	
+	
 }
 
 function backgroundImage(){
