@@ -33,6 +33,8 @@ function preload(){
 	tulip = loadImage ('tuplip.png');
 	necklace = loadImage ('necklace.png');
 	star = loadImage ('star.png');
+	field = loadImage ('field.png');
+	balcony = loadImage ('balcony.png');
 }
 
 function setup() {
@@ -187,8 +189,10 @@ function backgroundImage(){
 	image (lake, 540, 150, 409, 306);
 	image (garden, 1000, 150, 409, 306);
 	image (gov, 1500, 150, 406, 306);
-	image (boat, 100, 550, 406, 188);
-	image (ocean, 540, 550, 406, 188);
+	image (boat, 100, 650, 406, 188);
+	image (ocean, 540, 650, 406, 188);
+	image (field, 1040, 590, 367, 250);
+	image (balcony, 1500, 550, 360, 288);
 }
 
 function people(){
