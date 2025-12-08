@@ -1,14 +1,31 @@
-//let titleImput;
-//let typedTitle = "";
-let artboardColor;
-let 
-
 function preload(){
 	bgColor = loadImage('bgcolor.jpg');
 	bgImage = loadImage('bgImage.png');
 	person = loadImage('people.png');
 	objects = loadImage('object.jpg');
 	shapes = loadImage('shapes.jpg');
+	boat = loadImage('boat.png');
+	climber = loadImage('climber.png');
+	gardner = loadImage('gardener.png');
+	gov = loadImage('gov.png');
+	pinkheart = loadImage('heart.png');
+	horse = loadImage('horse.png');
+	kids = loadImage('kids.png');
+	knife = loadImage('knife.png');
+	lake = loadImage('lake.png');
+	laundry = loadImage('laundry.png');
+	lipgloss = loadImage('lipgloss.png');
+	mirror = loadImage('mirror.png');
+	ocean = loadImage('ocean.png');
+	orange = loadImage('orange.png');
+	pencil = loadImage('pencil.png');
+	redheart = loadImage('redheart.png');
+	safari = loadImage('safari.png');
+	salt = loadImage('salt.webp');
+	sitter = loadImage('sitter.png');
+	skiier = loadImage('skiier.png');
+	tape = loadImage('tape.png');
+	weds = loadImage('weds.png');
 }
 
 function setup() {
@@ -166,6 +183,7 @@ function people(){
 	textSize(50);
 	textStyle(BOLD);
 	text('PEOPLE', 100, 80);
+	
 }
 
 function object(){
@@ -173,7 +191,7 @@ function object(){
 	textFont('Helvetica Neue');
 	textSize(50);
 	textStyle(BOLD);
-	text('OBJECT', 100, 80);
+	text('OBJECTS', 100, 80);
 	
 }
 
@@ -182,5 +200,5 @@ function shape(){
 	textFont('Helvetica Neue');
 	textSize(50);
 	textStyle(BOLD);
-	text('SHAPE', 100, 80);
+	text('SHAPES', 100, 80);
 }
