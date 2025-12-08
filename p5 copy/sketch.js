@@ -30,6 +30,9 @@ function preload(){
 	seal = loadImage ('seal.png');
 	stand = loadImage ('stand.png');
 	usb = loadImage ('usb.png');
+	tulip = loadImage ('tuplip.png');
+	necklace = loadImage ('necklace.png');
+	star = loadImage ('star.png');
 }
 
 function setup() {
@@ -218,8 +221,8 @@ function object(){
 	image (orangefruit, 500, 150, 300, 300);
 	image (salt, 800, 130, 340, 340);
 	image (knife, 1150, 160, 250, 250);
-	image (pinkheart, 1500, 160, 320, 276);
-	image (redheart, 90, 550, 320, 320);
+	image (necklace, 1500, 160, 320, 276);
+	image (tulip, 200, 550, 104, 320);
 	image (lipgloss, 500, 550, 310, 310);
 	image (pencil, 800, 550, 310, 310);
 	image (mirror, 1150, 550, 310, 310);
