@@ -29,6 +29,7 @@ function preload(){
 	weds = loadImage('weds.png');
 	seal = loadImage ('seal.png');
 	stand = loadImage ('stand.png');
+	usb = loadImage ('usb.png');
 }
 
 function setup() {
@@ -212,7 +213,17 @@ function object(){
 	textSize(50);
 	textStyle(BOLD);
 	text('OBJECTS', 100, 80);
-	
+
+	image (tape, 100, 200, 320, 209);
+	image (orangefruit, 500, 150, 300, 300);
+	image (salt, 800, 130, 340, 340);
+	image (knife, 1150, 160, 250, 250);
+	image (pinkheart, 1500, 160, 320, 276);
+	image (redheart, 90, 550, 320, 320);
+	image (lipgloss, 500, 550, 310, 310);
+	image (pencil, 800, 550, 310, 310);
+	image (mirror, 1150, 550, 310, 310);
+	image (usb, 1500, 550, 310, 310);
 }
 
 function shape(){
