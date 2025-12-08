@@ -6,10 +6,11 @@ function preload(){
 	shapes = loadImage('shapes.jpg');
 	boat = loadImage('boat.png');
 	climber = loadImage('climber.png');
-	gardner = loadImage('gardener.png');
+	garden = loadImage('garden.png');
 	gov = loadImage('gov.png');
 	pinkheart = loadImage('heart.png');
 	horse = loadImage('horse.png');
+	king = loadImage('king.png');
 	kids = loadImage('kids.png');
 	knife = loadImage('knife.png');
 	lake = loadImage('lake.png');
@@ -17,7 +18,7 @@ function preload(){
 	lipgloss = loadImage('lipgloss.png');
 	mirror = loadImage('mirror.png');
 	ocean = loadImage('ocean.png');
-	orange = loadImage('orange.png');
+	orangefruit = loadImage('orange.png');
 	pencil = loadImage('pencil.png');
 	redheart = loadImage('redheart.png');
 	safari = loadImage('safari.png');
@@ -26,6 +27,8 @@ function preload(){
 	skiier = loadImage('skiier.png');
 	tape = loadImage('tape.png');
 	weds = loadImage('weds.png');
+	seal = loadImage ('seal.png');
+	stand = loadImage ('stand.png');
 }
 
 function setup() {
@@ -175,6 +178,13 @@ function backgroundImage(){
 	textSize(50);
 	textStyle(BOLD);
 	text('BACKGROUND IMAGE', 100, 80);
+
+	image (safari, 100, 150, 409, 306);
+	image (lake, 540, 150, 409, 306);
+	image (garden, 1000, 150, 409, 306);
+	image (gov, 1500, 150, 406, 306);
+	image (boat, 100, 550, 406, 188);
+	image (ocean, 540, 550, 406, 188);
 }
 
 function people(){
@@ -183,7 +193,17 @@ function people(){
 	textSize(50);
 	textStyle(BOLD);
 	text('PEOPLE', 100, 80);
-	
+
+	image (climber, 100, 150, 204, 366);
+	image (laundry, 400, 200, 264, 325);
+	image (king, 750, 150, 204, 365);
+	image (weds, 1050, 170, 299, 316);
+	image (horse, 1450, 150, 289, 350);
+	image (seal, 100, 650, 290, 151);
+	image (skiier, 400, 600, 337, 222);
+	image (sitter, 750, 550, 272, 323);
+	image (kids, 1150, 600, 266, 182);
+	image (stand, 1500, 500, 278, 390);
 }
 
 function object(){
