@@ -1,3 +1,17 @@
+let red;
+let orange;
+let yellow;
+let green;
+let teal;
+let mint;
+let babyblue;
+let blue;
+let violet;
+let purple;
+let fuscia;
+let pink;
+
+
 function preload(){
 	bgColor = loadImage('bgcolor.jpg');
 	bgImage = loadImage('bgImage.png');
@@ -35,19 +49,38 @@ function preload(){
 	star = loadImage ('star.png');
 	field = loadImage ('field.png');
 	balcony = loadImage ('balcony.png');
+	speech = loadImage('speechbubble.png');
+//	thought = loadImage ('thoughtbubble.png');
 }
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
 	background(0);
+
+	artboardColor = color(255);
+	
 	home();
+	red = color(255, 33, 74);
+	orange = color(245, 130, 64);
+	yellow = color(255, 230, 102);
+	green = color(190, 237, 114);
+	mint = color(157, 245, 180);
+	teal = color(129, 240, 227);
+	babyblue = color(117, 211, 240);
+	blue = color(76, 135, 245);
+	violet = color(167, 172, 235);
+	purple = color(141, 91, 189);
+	fuscia = color(239, 127, 245);
+	pink = color(217, 78, 166);
+	
 }
 
 function draw() {
 }
 
 function home(){
-	fill(255);
+	background(0);
+	fill(artboardColor);
 	noStroke();
 	rect(100, 100, 1100, 700);//artboard
 
@@ -57,6 +90,8 @@ function home(){
 	image(objects, 1250, 550, 100, 100);//objects
 	image(shapes, 1250, 700, 100, 100);//shapes
 
+	fill(255);
+	noStroke();
 	textFont('Helvetica Neue');//title
 	textSize(50);
 	textStyle(BOLD);
@@ -119,6 +154,71 @@ function mousePressed(){
 		background(0);
 		shape();
 	}
+
+	//colors
+
+	if (mouseX > 100 && mouseX < 350 && mouseY > 150 && mouseY < 400){
+		artboardColor = red;
+		background(0);
+		home();
+	}
+	if (mouseX > 400 && mouseX < 650 && mouseY > 150 && mouseY < 400){
+		artboardColor = orange;
+		background(0);
+		home();
+	}
+	if (mouseX > 700 && mouseX < 950 && mouseY > 150 && mouseY < 400){
+		artboardColor = yellow;
+		background(0);
+		home();
+	}
+	if (mouseX > 1000 && mouseX < 1250 && mouseY > 150 && mouseY < 400){
+		artboardColor = green;
+		background(0);
+		home();
+	}
+	if (mouseX > 1300 && mouseX < 1550 && mouseY > 150 && mouseY < 400){
+		artboardColor = mint;
+		background(0);
+		home();
+	}
+	if (mouseX > 1600 && mouseX < 1850 && mouseY > 150 && mouseY < 400){
+		artboardColor = teal;
+		background(0);
+		home();
+	}
+	if (mouseX > 100 && mouseX < 350 && mouseY > 450 && mouseY < 700){
+		artboardColor = babyblue;
+		background(0);
+		home();
+	}
+	if (mouseX > 400 && mouseX < 650 && mouseY > 450 && mouseY < 700){
+		artboardColor = blue;
+		background(0);
+		home();
+	}
+	if (mouseX > 700 && mouseX < 950 && mouseY > 450 && mouseY < 700){
+		artboardColor = violet;
+		background(0);
+		home();
+	}
+	if (mouseX > 1000 && mouseX < 1250 && mouseY > 450 && mouseY < 700){
+		artboardColor = purple;
+		background(0);
+		home();
+	}
+	if (mouseX > 1300 && mouseX < 1550 && mouseY > 450 && mouseY < 700){
+		artboardColor = fuscia;
+		background(0);
+		home();
+	}
+	if (mouseX > 1600 && mouseX < 1850 && mouseY > 450 && mouseY < 700){
+		artboardColor = pink;
+		background(0);
+		home();
+	}
+
+	
 }
 
 function backgroundColor(){
@@ -128,51 +228,51 @@ function backgroundColor(){
 	textStyle(BOLD);
 	text('BACKGROUND COLOR', 100, 80);
 
-	fill(255, 33, 74);//red
+	fill(red);
 	stroke(255);
 	rect(100, 150, 250, 250);
 
-	fill(245, 130, 64);//orange
+	fill(orange);
 	stroke(255);
 	rect(400, 150, 250, 250);	
 
-	fill(255, 230, 102);//yellow
+	fill(yellow);
 	stroke(255);
 	rect(700, 150, 250, 250);	
 
-	fill(190, 237, 114);//green
+	fill(green);
 	stroke(255);
 	rect(1000, 150, 250, 250);	
 
-	fill(157, 245, 180);//mint
+	fill(mint);
 	stroke(255);
 	rect(1300, 150, 250, 250);	
 
-	fill(129, 240, 227);//teal
+	fill(teal);
 	stroke(255);
 	rect(1600, 150, 250, 250);	
 
-	fill(117, 211, 240);// baby blue
+	fill(babyblue);
 	stroke(255);
 	rect(100, 450, 250, 250);
 
-	fill(76, 135, 245);//blue
+	fill(blue);
 	stroke(255);
 	rect(400, 450, 250, 250);	
 
-	fill(167, 172, 235);//violet
+	fill(violet);
 	stroke(255);
 	rect(700, 450, 250, 250);	
 
-	fill(141, 91, 189);//purple
+	fill(purple);
 	stroke(255);
 	rect(1000, 450, 250, 250);	
 
-	fill(239, 127, 245);//fuscia
+	fill(fuscia);
 	stroke(255);
 	rect(1300, 450, 250, 250);	
 
-	fill(217, 78, 166);//pink
+	fill(pink);
 	stroke(255);
 	rect(1600, 450, 250, 250);	
 	
@@ -239,4 +339,9 @@ function shape(){
 	textSize(50);
 	textStyle(BOLD);
 	text('SHAPES', 100, 80);
+
+	image(pinkheart, 100, 150, 300, 260);
+	image(redheart, 450, 150, 300, 300);
+	image(star, 800, 140, 290, 290);
+	image (speech, )
 }
