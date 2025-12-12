@@ -1,3 +1,7 @@
+let screen = "home";
+let bgColorScreen = false;
+let bgImageScreen;
+
 let red;
 let orange;
 let yellow;
@@ -10,7 +14,6 @@ let violet;
 let purple;
 let fuscia;
 let pink;
-
 
 function preload(){
 	bgColor = loadImage('bgcolor.jpg');
@@ -54,7 +57,7 @@ function preload(){
 }
 
 function setup() {
-	createCanvas(windowWidth, windowHeight);
+	createCanvas(2940, 1380);
 	background(0);
 
 	artboardColor = color(255);
@@ -79,6 +82,8 @@ function draw() {
 }
 
 function home(){
+	screen = "home";
+	
 	background(0);
 	fill(artboardColor);
 	noStroke();
@@ -134,94 +139,141 @@ function home(){
 }
 
 function mousePressed(){
-	if (mouseX > 1370 && mouseX < 1700 && mouseY > 130 && mouseY < 180){
+	if (screen == "home"){
+
+		if (mouseX > 1370 && mouseX < 1700 && mouseY > 130 && mouseY < 180){
 		background(0);
 		backgroundColor();
-	}
-	if (mouseX > 1370 && mouseX < 1700 && mouseY > 280 && mouseY < 330){
+		}
+		if (mouseX > 1370 && mouseX < 1700 && mouseY > 280 && mouseY < 330){
 		background(0);
 		backgroundImage();
-	}
-	if (mouseX > 1370 && mouseX < 1700 && mouseY > 430 && mouseY < 480){
+		}
+		if (mouseX > 1370 && mouseX < 1700 && mouseY > 430 && mouseY < 480){
 		background(0);
 		people();
-	}
-	if (mouseX > 1370 && mouseX < 1700 && mouseY > 580 && mouseY < 630){
+		}
+		if (mouseX > 1370 && mouseX < 1700 && mouseY > 580 && mouseY < 630){
 		background(0);
 		object();
-	}
-	if (mouseX > 1370 && mouseX < 1700 && mouseY > 730 && mouseY < 780){
+		}
+		if (mouseX > 1370 && mouseX < 1700 && mouseY > 730 && mouseY < 780){
 		background(0);
 		shape();
+		}
 	}
 
-	//colors
-
-	if (mouseX > 100 && mouseX < 350 && mouseY > 150 && mouseY < 400){
+	else if(screen == "bgColor"){
+		if (mouseX > 100 && mouseX < 350 && mouseY > 150 && mouseY < 400){
 		artboardColor = red;
 		background(0);
 		home();
-	}
-	if (mouseX > 400 && mouseX < 650 && mouseY > 150 && mouseY < 400){
+		}
+		if (mouseX > 400 && mouseX < 650 && mouseY > 150 && mouseY < 400){
 		artboardColor = orange;
 		background(0);
 		home();
-	}
-	if (mouseX > 700 && mouseX < 950 && mouseY > 150 && mouseY < 400){
+		}
+		if (mouseX > 700 && mouseX < 950 && mouseY > 150 && mouseY < 400){
 		artboardColor = yellow;
 		background(0);
 		home();
-	}
-	if (mouseX > 1000 && mouseX < 1250 && mouseY > 150 && mouseY < 400){
+		}
+		if (mouseX > 1000 && mouseX < 1250 && mouseY > 150 && mouseY < 400){
 		artboardColor = green;
 		background(0);
 		home();
-	}
-	if (mouseX > 1300 && mouseX < 1550 && mouseY > 150 && mouseY < 400){
+		}
+		if (mouseX > 1300 && mouseX < 1550 && mouseY > 150 && mouseY < 400){
 		artboardColor = mint;
 		background(0);
 		home();
-	}
-	if (mouseX > 1600 && mouseX < 1850 && mouseY > 150 && mouseY < 400){
+		}
+		if (mouseX > 1600 && mouseX < 1850 && mouseY > 150 && mouseY < 400){
 		artboardColor = teal;
 		background(0);
 		home();
-	}
-	if (mouseX > 100 && mouseX < 350 && mouseY > 450 && mouseY < 700){
+		}
+		if (mouseX > 100 && mouseX < 350 && mouseY > 450 && mouseY < 700){
 		artboardColor = babyblue;
 		background(0);
 		home();
-	}
-	if (mouseX > 400 && mouseX < 650 && mouseY > 450 && mouseY < 700){
+		}
+		if (mouseX > 400 && mouseX < 650 && mouseY > 450 && mouseY < 700){
 		artboardColor = blue;
 		background(0);
 		home();
-	}
-	if (mouseX > 700 && mouseX < 950 && mouseY > 450 && mouseY < 700){
+		}
+		if (mouseX > 700 && mouseX < 950 && mouseY > 450 && mouseY < 700){
 		artboardColor = violet;
 		background(0);
 		home();
-	}
-	if (mouseX > 1000 && mouseX < 1250 && mouseY > 450 && mouseY < 700){
+		}
+		if (mouseX > 1000 && mouseX < 1250 && mouseY > 450 && mouseY < 700){
 		artboardColor = purple;
 		background(0);
 		home();
-	}
-	if (mouseX > 1300 && mouseX < 1550 && mouseY > 450 && mouseY < 700){
+		}
+		if (mouseX > 1300 && mouseX < 1550 && mouseY > 450 && mouseY < 700){
 		artboardColor = fuscia;
 		background(0);
 		home();
-	}
-	if (mouseX > 1600 && mouseX < 1850 && mouseY > 450 && mouseY < 700){
+		}
+		if (mouseX > 1600 && mouseX < 1850 && mouseY > 450 && mouseY < 700){
 		artboardColor = pink;
 		background(0);
 		home();
+		}
 	}
 
-	
+	else if(screen == "bgImage"){
+		if(mouseX > 100 && mouseX < 509 && mouseY > 150 && mouseY < 456){
+		background(0);
+		home();
+		image(safari, 100, 50, 1100, 800);
+		}
+		if(mouseX > 540 && mouseX < 949 && mouseY > 150 && mouseY < 456){
+		background(0);
+		home();
+		image(lake, 100, 100, 1100, 750);
+		}
+		if(mouseX > 1000 && mouseX < 1409 && mouseY > 150 && mouseY < 456){
+		background(0);
+		home();
+		image(garden, 100, 100, 1100, 750);
+		}
+		if(mouseX > 1500 && mouseX < 1906 && mouseY > 150 && mouseY < 456){
+		background(0);
+		home();
+		image(gov, 100, 100, 1100, 750);
+		}
+		if(mouseX > 100 && mouseX < 506 && mouseY > 650 && mouseY < 838){
+		background(0);
+		home();
+		image(boat, 100, 300, 1100, 509);
+		}
+		if(mouseX > 540 && mouseX < 946 && mouseY > 650 && mouseY < 838){
+		background(0);
+		home();
+		image(ocean, 100, 300, 1100, 509);
+		}
+		if(mouseX > 1040 && mouseX < 1407 && mouseY > 590 && mouseY < 840){
+		background(0);
+		home();
+		image(field, 100, 55, 1100, 749);
+		}
+		if(mouseX > 1500 && mouseX < 1860 && mouseY > 550 && mouseY < 838){
+		background(0);
+		home();
+		image(balcony, 100, 100, 1100, 750);
+		}
+	}
 }
+	
 
 function backgroundColor(){
+	screen = "bgColor";
+	
 	fill(255);
 	textFont('Helvetica Neue');
 	textSize(50);
@@ -275,10 +327,11 @@ function backgroundColor(){
 	fill(pink);
 	stroke(255);
 	rect(1600, 450, 250, 250);	
-	
 }
 
 function backgroundImage(){
+	screen = "bgImage";
+	
 	fill(255);
 	textFont('Helvetica Neue');
 	textSize(50);
@@ -296,6 +349,8 @@ function backgroundImage(){
 }
 
 function people(){
+	//screen == "people";
+	
 	fill(255);
 	textFont('Helvetica Neue');
 	textSize(50);
@@ -315,6 +370,8 @@ function people(){
 }
 
 function object(){
+	//screen == "object";
+	
 	fill(255);
 	textFont('Helvetica Neue');
 	textSize(50);
@@ -333,7 +390,8 @@ function object(){
 	image (usb, 1500, 550, 310, 310);
 }
 
-function shape(){
+/*function (){
+	
 	fill(255);
 	textFont('Helvetica Neue');
 	textSize(50);
@@ -345,3 +403,4 @@ function shape(){
 	image(star, 800, 140, 290, 290);
 	image (speech, )
 }
+*/
