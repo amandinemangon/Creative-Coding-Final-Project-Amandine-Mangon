@@ -1,6 +1,7 @@
 let screen = "home";
 let savedArtboard;
 let finalArtboard;
+let snipSound;
 
 
 let red;
@@ -21,12 +22,10 @@ function preload(){
 	bgImage = loadImage('bgImage.png');
 	person = loadImage('people.png');
 	objects = loadImage('object.jpg');
-	shapes = loadImage('shapes.jpg');
 	boat = loadImage('boat.png');
 	climber = loadImage('climber.png');
 	garden = loadImage('garden.png');
 	gov = loadImage('gov.png');
-	pinkheart = loadImage('heart.png');
 	horse = loadImage('horse.png');
 	king = loadImage('king.png');
 	kids = loadImage('kids.png');
@@ -38,7 +37,6 @@ function preload(){
 	ocean = loadImage('ocean.png');
 	orangefruit = loadImage('orange.png');
 	pencil = loadImage('pencil.png');
-	redheart = loadImage('redheart.png');
 	safari = loadImage('safari.png');
 	salt = loadImage('salt.webp');
 	sitter = loadImage('sitter.png');
@@ -50,10 +48,9 @@ function preload(){
 	usb = loadImage ('usb.png');
 	tulip = loadImage ('tuplip.png');
 	necklace = loadImage ('necklace.png');
-	star = loadImage ('star.png');
 	field = loadImage ('field.png');
 	balcony = loadImage ('balcony.png');
-	speech = loadImage('speechbubble.png');
+	snipSound = loadSound('snip.mp3');
 }
 
 function setup() {
@@ -80,6 +77,9 @@ function setup() {
 }
 
 function draw() {
+	if(screen == "home"){
+		home();
+	}
 }
 
 function home(){
@@ -95,10 +95,58 @@ function home(){
 	}
 
 	image(bgColor, 1250, 100, 100, 100);//background color
+	
+	if (mouseX > 1250 && mouseX < 1350 && mouseY > 100 && mouseY < 200){
+		fill(255);
+		noStroke();
+		textFont('Helvetica Neue');//background color
+		textSize(35);
+		textStyle(NORMAL);
+		text('BACKGROUND COLOR', 1370, 160);
+	}
+	
 	image(bgImage,1250, 250, 100, 100)//background images
+	
+	if (mouseX > 1250 && mouseX < 1350 && mouseY > 250 && mouseY < 350){
+		fill(255);
+		noStroke();
+		textFont('Helvetica Neue');//background image
+		textSize(35);
+		textStyle(NORMAL);
+		text('BACKGROUND IMAGE', 1370, 310);
+	}
+	
 	image(person, 1250, 400, 100, 100);//people
+	if (mouseX > 1250 && mouseX < 1350 && mouseY > 400 && mouseY < 500){
+		fill(255);
+		noStroke();
+		textFont('Helvetica Neue');//people
+		textSize(35);
+		textStyle(NORMAL);
+		text('PEOPLE', 1370, 460);
+	}
+	
 	image(objects, 1250, 550, 100, 100);//objects
-	image(shapes, 1250, 700, 100, 100);//shapes
+	if (mouseX > 1250 && mouseX < 1350 && mouseY > 550 && mouseY < 650){
+		fill(255);
+		noStroke();
+		textFont('Helvetica Neue');//objects
+		textSize(35);
+		textStyle(NORMAL);
+		text('OBJECTS', 1370, 610);
+	}
+	
+	/*image(shapes, 1250, 700, 100, 100);//shapes
+	if (mouseX > 1250 && mouseX < 1350 && mouseY > 700 && mouseY < 800){
+		fill(255);
+		noStroke();
+		textFont('Helvetica Neue');//shapes
+		textSize(35);
+		textStyle(NORMAL);
+		text('SHAPES', 1370, 760);
+	}
+		*/
+	
 
 	fill(255);
 	noStroke();
@@ -128,63 +176,32 @@ function home(){
 	textSize(25);
 	textStyle(NORMAL);
 	text('DONE', 1127, 850);
-
-	fill(255);
-	noStroke();
-	textFont('Helvetica Neue');//background color
-	textSize(35);
-	textStyle(NORMAL);
-	text('BACKGROUND COLOR', 1370, 160);
-	
-	fill(255);
-	noStroke();
-	textFont('Helvetica Neue');//background image
-	textSize(35);
-	textStyle(NORMAL);
-	text('BACKGROUND IMAGE', 1370, 310);
-
-	fill(255);
-	noStroke();
-	textFont('Helvetica Neue');//people
-	textSize(35);
-	textStyle(NORMAL);
-	text('PEOPLE', 1370, 460);
-	
-	fill(255);
-	noStroke();
-	textFont('Helvetica Neue');//objects
-	textSize(35);
-	textStyle(NORMAL);
-	text('OBJECTS', 1370, 610);
-
-	fill(255);
-	noStroke();
-	textFont('Helvetica Neue');//shapes
-	textSize(35);
-	textStyle(NORMAL);
-	text('SHAPES', 1370, 760);
 }
 
 function mousePressed(){
+	userStartAudio();
+	snipSound.play();
+
+	
 	if(screen == "home"){
 
-		if (mouseX > 1370 && mouseX < 1700 && mouseY > 130 && mouseY < 180){
+		if (mouseX > 1250 && mouseX < 1350 && mouseY > 100 && mouseY < 200){
 			background(0);
 			backgroundColor();
 		}
-		if (mouseX > 1370 && mouseX < 1700 && mouseY > 280 && mouseY < 330){
+		if (mouseX > 1250 && mouseX < 1350 && mouseY > 250 && mouseY < 350){
 			background(0);
 			backgroundImage();
 		}
-		if (mouseX > 1370 && mouseX < 1700 && mouseY > 430 && mouseY < 480){
+		if (mouseX > 1250 && mouseX < 1350 && mouseY > 400 && mouseY < 500){
 			background(0);
 			people();
 		}
-		if (mouseX > 1370 && mouseX < 1700 && mouseY > 580 && mouseY < 630){
+		if (mouseX > 1250 && mouseX < 1350 && mouseY > 550 && mouseY < 650){
 			background(0);
 			object();
 		}
-		if (mouseX > 1370 && mouseX < 1700 && mouseY > 730 && mouseY < 780){
+		if (mouseX > 1250 && mouseX < 1350 && mouseY > 700 && mouseY < 800){
 			background(0);
 			shape();
 		}
