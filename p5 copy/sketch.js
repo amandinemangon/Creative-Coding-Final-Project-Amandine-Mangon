@@ -1,5 +1,6 @@
 let screen = "home";
 let savedArtboard;
+let finalArtboard;
 
 
 let red;
@@ -53,11 +54,10 @@ function preload(){
 	field = loadImage ('field.png');
 	balcony = loadImage ('balcony.png');
 	speech = loadImage('speechbubble.png');
-//	thought = loadImage ('thoughtbubble.png');
 }
 
 function setup() {
-	createCanvas(2940, 1380);
+	createCanvas(1960, 920);
 	background(0);
 
 	artboardColor = color(255);
@@ -107,6 +107,28 @@ function home(){
 	textStyle(BOLD);
 	text('"TITLE"', 100, 80);
 
+	fill(255);//reset rect
+	noStroke();
+	rect(100, 825, 85, 30);
+	
+	fill(0);
+	noStroke();
+	textFont('Helvetica Neue');//reset
+	textSize(25);
+	textStyle(NORMAL);
+	text('RESET', 103, 850);
+
+	fill(255);//done button
+	noStroke();
+	rect(1125, 825, 75, 30);
+
+	fill(0);//done text
+	noStroke();
+	textFont('Helvetica Neue');//reset
+	textSize(25);
+	textStyle(NORMAL);
+	text('DONE', 1127, 850);
+
 	fill(255);
 	noStroke();
 	textFont('Helvetica Neue');//background color
@@ -144,267 +166,282 @@ function home(){
 }
 
 function mousePressed(){
-	if (screen == "home"){
+	if(screen == "home"){
 
 		if (mouseX > 1370 && mouseX < 1700 && mouseY > 130 && mouseY < 180){
-		background(0);
-		backgroundColor();
+			background(0);
+			backgroundColor();
 		}
 		if (mouseX > 1370 && mouseX < 1700 && mouseY > 280 && mouseY < 330){
-		background(0);
-		backgroundImage();
+			background(0);
+			backgroundImage();
 		}
 		if (mouseX > 1370 && mouseX < 1700 && mouseY > 430 && mouseY < 480){
-		background(0);
-		people();
+			background(0);
+			people();
 		}
 		if (mouseX > 1370 && mouseX < 1700 && mouseY > 580 && mouseY < 630){
-		background(0);
-		object();
+			background(0);
+			object();
 		}
 		if (mouseX > 1370 && mouseX < 1700 && mouseY > 730 && mouseY < 780){
-		background(0);
-		shape();
+			background(0);
+			shape();
+		}
+		if (mouseX > 100 && mouseX < 210 && mouseY >825 && mouseY < 855){//reset page --> turns white
+			fill(255);
+			noStroke();
+			rect(100, 100, 1100, 700);
+		}
+		if (mouseX > 1125 && mouseX < 1200 && mouseY > 825 && mouseY < 855){
+			finalArtboard = get(100, 100, 1100, 700);
+			finalCollage();
 		}
 	}
 
 	else if(screen == "bgColor"){
 		if (mouseX > 100 && mouseX < 350 && mouseY > 150 && mouseY < 400){
-		artboardColor = red;
-		background(0);
-		home();
+			artboardColor = red;
+			background(0);
+			home();
 		}
 		if (mouseX > 400 && mouseX < 650 && mouseY > 150 && mouseY < 400){
-		artboardColor = orange;
-		background(0);
-		home();
+			artboardColor = orange;
+			background(0);
+			home();
 		}
 		if (mouseX > 700 && mouseX < 950 && mouseY > 150 && mouseY < 400){
-		artboardColor = yellow;
-		background(0);
-		home();
+			artboardColor = yellow;
+			background(0);
+			home();
 		}
 		if (mouseX > 1000 && mouseX < 1250 && mouseY > 150 && mouseY < 400){
-		artboardColor = green;
-		background(0);
-		home();
+			artboardColor = green;
+			background(0);
+			home();
 		}
 		if (mouseX > 1300 && mouseX < 1550 && mouseY > 150 && mouseY < 400){
-		artboardColor = mint;
-		background(0);
-		home();
+			artboardColor = mint;
+			background(0);
+			home();
 		}
 		if (mouseX > 1600 && mouseX < 1850 && mouseY > 150 && mouseY < 400){
-		artboardColor = teal;
-		background(0);
-		home();
+			artboardColor = teal;
+			background(0);
+			home();
 		}
 		if (mouseX > 100 && mouseX < 350 && mouseY > 450 && mouseY < 700){
-		artboardColor = babyblue;
-		background(0);
-		home();
+			artboardColor = babyblue;
+			background(0);
+			home();
 		}
 		if (mouseX > 400 && mouseX < 650 && mouseY > 450 && mouseY < 700){
-		artboardColor = blue;
-		background(0);
-		home();
+			artboardColor = blue;
+			background(0);
+			home();
 		}
 		if (mouseX > 700 && mouseX < 950 && mouseY > 450 && mouseY < 700){
-		artboardColor = violet;
-		background(0);
-		home();
+			artboardColor = violet;
+			background(0);
+			home();
 		}
 		if (mouseX > 1000 && mouseX < 1250 && mouseY > 450 && mouseY < 700){
-		artboardColor = purple;
-		background(0);
-		home();
+			artboardColor = purple;
+			background(0);
+			home();
 		}
 		if (mouseX > 1300 && mouseX < 1550 && mouseY > 450 && mouseY < 700){
-		artboardColor = fuscia;
-		background(0);
-		home();
+			artboardColor = fuscia;
+			background(0);
+			home();
 		}
 		if (mouseX > 1600 && mouseX < 1850 && mouseY > 450 && mouseY < 700){
-		artboardColor = pink;
-		background(0);
-		home();
+			artboardColor = pink;
+			background(0);
+			home();
 		}
 	}
 
 	else if(screen == "bgImage"){
-		if(mouseX > 100 && mouseX < 509 && mouseY > 150 && mouseY < 456){
-		background(0);
-		home();
-		image(safari, 100, 50, 1100, 800);
+		if (mouseX > 100 && mouseX < 509 && mouseY > 150 && mouseY < 456){
+			background(0);
+			home();
+			image(safari, 100, 100, 1100, 700);
+			savedArtboard = get(100, 100, 1100, 700);
+		}
+		if (mouseX > 540 && mouseX < 949 && mouseY > 150 && mouseY < 456){
+			background(0);
+			home();
+			image(lake, 100, 100, 1100, 700);
+			savedArtboard = get(100, 100, 1100, 700);
+		}
+		if (mouseX > 1000 && mouseX < 1409 && mouseY > 150 && mouseY < 456){
+			background(0);
+			home();
+			image(garden, 100, 100, 1100, 700);
+			savedArtboard = get(100, 100, 1100, 700);
+		}
+		if (mouseX > 1500 && mouseX < 1906 && mouseY > 150 && mouseY < 456){
+			background(0);
+			home();
+			image(gov, 100, 100, 1100, 700);
 		savedArtboard = get(100, 100, 1100, 700);
 		}
-		if(mouseX > 540 && mouseX < 949 && mouseY > 150 && mouseY < 456){
-		background(0);
-		home();
-		image(lake, 100, 100, 1100, 750);
+		if (mouseX > 100 && mouseX < 506 && mouseY > 650 && mouseY < 838){
+			background(0);
+			home();
+			image(boat, 100, 300, 1100, 509);
 		savedArtboard = get(100, 100, 1100, 700);
 		}
-		if(mouseX > 1000 && mouseX < 1409 && mouseY > 150 && mouseY < 456){
-		background(0);
-		home();
-		image(garden, 100, 100, 1100, 750);
-		savedArtboard = get(100, 100, 1100, 700);
+		if (mouseX > 540 && mouseX < 946 && mouseY > 650 && mouseY < 838){
+			background(0);
+			home();
+			image(ocean, 100, 300, 1100, 509);
+			savedArtboard = get(100, 100, 1100, 700);
 		}
-		if(mouseX > 1500 && mouseX < 1906 && mouseY > 150 && mouseY < 456){
-		background(0);
-		home();
-		image(gov, 100, 100, 1100, 750);
-		savedArtboard = get(100, 100, 1100, 700);
+		if (mouseX > 1040 && mouseX < 1407 && mouseY > 590 && mouseY < 840){
+			background(0);
+			home();
+			image(field, 100, 100, 1100, 700);
+			savedArtboard = get(100, 100, 1100, 700);
 		}
-		if(mouseX > 100 && mouseX < 506 && mouseY > 650 && mouseY < 838){
-		background(0);
-		home();
-		image(boat, 100, 300, 1100, 509);
-		savedArtboard = get(100, 100, 1100, 700);
-		}
-		if(mouseX > 540 && mouseX < 946 && mouseY > 650 && mouseY < 838){
-		background(0);
-		home();
-		image(ocean, 100, 300, 1100, 509);
-		savedArtboard = get(100, 100, 1100, 700);
-		}
-		if(mouseX > 1040 && mouseX < 1407 && mouseY > 590 && mouseY < 840){
-		background(0);
-		home();
-		image(field, 100, 55, 1100, 749);
-		savedArtboard = get(100, 100, 1100, 700);
-		}
-		if(mouseX > 1500 && mouseX < 1860 && mouseY > 550 && mouseY < 838){
-		background(0);
-		home();
-		image(balcony, 100, 100, 1100, 750);
-		savedArtboard = get(100, 100, 1100, 700);
+		if (mouseX > 1500 && mouseX < 1860 && mouseY > 550 && mouseY < 838){
+			background(0);
+			home();
+			image(balcony, 100, 100, 1100, 700);
+			savedArtboard = get(100, 100, 1100, 700);
 		}
 	}
 	else if (screen == "people"){
-		if(mouseX > 100 && mouseX < 304 && mouseY> 150 && mouseY < 516){
+		if (mouseX > 100 && mouseX < 304 && mouseY> 150 && mouseY < 516){
 			background(0);
 			home();
-			image(climber, random(100, 900), random(100, 600), 204, 366);
+			image(climber, random(100, 900), random(100, 500), 204, 366);
 			savedArtboard = get(100, 100, 1100, 700);
 		}
-		if(mouseX > 400 && mouseX < 664 && mouseY> 200 && mouseY < 525){
+		if (mouseX > 400 && mouseX < 664 && mouseY> 200 && mouseY < 525){
 			background(0);
 			home();
-			image(laundry, random(100,900), random(100, 600), 264, 325);
+			image(laundry, random(100,900), random(100, 500), 264, 325);
 			savedArtboard = get(100, 100, 1100, 700);
 		}
-		if(mouseX > 750 && mouseX < 954 && mouseY> 150 && mouseY < 515){
+		if (mouseX > 750 && mouseX < 954 && mouseY> 150 && mouseY < 515){
 			background(0);
 			home();
-			image(king, random(100,900), random(100, 600), 204, 365);
+			image(king, random(100,900), random(100, 500), 204, 365);
 			savedArtboard = get(100, 100, 1100, 700);
 		}
-		if(mouseX > 1050 && mouseX < 1349 && mouseY> 170 && mouseY < 486){
+		if (mouseX > 1050 && mouseX < 1349 && mouseY> 170 && mouseY < 486){
 			background(0);
 			home();
-			image(weds, random(100,900), random(100, 600), 299, 316);
+			image(weds, random(100,900), random(100, 500), 299, 316);
 			savedArtboard = get(100, 100, 1100, 700);
 		}
-		if(mouseX > 1450 && mouseX < 1739 && mouseY> 150 && mouseY < 500){
+		if (mouseX > 1450 && mouseX < 1739 && mouseY> 150 && mouseY < 500){
 			background(0);
 			home();
-			image(horse, random(100,900), random(100, 600), 289, 350);
+			image(horse, random(100,900), random(100, 500), 289, 350);
 			savedArtboard = get(100, 100, 1100, 700);
 		}
-		if(mouseX > 100 && mouseX < 390 && mouseY> 650 && mouseY < 801){
+		if (mouseX > 100 && mouseX < 390 && mouseY> 650 && mouseY < 801){
 			background(0);
 			home();
-			image(seal, random(100,900), random(100, 600), 290, 151);
+			image(seal, random(100,900), random(100, 500), 290, 151);
 			savedArtboard = get(100, 100, 1100, 700);
 		}
-		if(mouseX > 400 && mouseX < 737 && mouseY> 600 && mouseY < 822){
+		if (mouseX > 400 && mouseX < 737 && mouseY> 600 && mouseY < 822){
 			background(0);
 			home();
-			image(skiier, random(100,900), random(100, 600), 337, 222);
+			image(skiier, random(100,900), random(100, 500), 337, 222);
 			savedArtboard = get(100, 100, 1100, 700);
 		}
-		if(mouseX > 750 && mouseX < 1022 && mouseY> 550 && mouseY < 873){
+		if (mouseX > 750 && mouseX < 1022 && mouseY> 550 && mouseY < 873){
 			background(0);
 			home();
-			image(sitter, random(100, 900), random(100, 600), 272, 323);
+			image(sitter, random(100, 900), random(100, 500), 272, 323);
 			savedArtboard = get(100, 100, 1100, 700);
 		}
-		if(mouseX > 1150 && mouseX < 1416 && mouseY> 600 && mouseY < 782){
+		if (mouseX > 1150 && mouseX < 1416 && mouseY> 500 && mouseY < 782){
 			background(0);
 			home();
-			image(kids, random(100, 900), random(100, 600), 266, 182);
+			image(kids, random(100, 900), random(100, 500), 266, 182);
 			savedArtboard = get(100, 100, 1100, 700);
 		}
-		if(mouseX > 1500 && mouseX < 1778 && mouseY> 500 && mouseY < 890){
+		if (mouseX > 1500 && mouseX < 1778 && mouseY> 500 && mouseY < 890){
 			background(0);
 			home();
-			image(stand, random(100, 900), random(100, 600), 278, 390);
+			image(stand, random(100, 900), random(100, 500), 278, 390);
 			savedArtboard = get(100, 100, 1100, 700);
 		}
 	}
 	else if(screen == "object"){
-		if(mouseX > 100 && mouseX <420 && mouseY > 200 && mouseY < 409){
+		if (mouseX > 100 && mouseX <420 && mouseY > 200 && mouseY < 409){
 			background(0);
 			home();
-			image(tape, random(100, 900), random(100, 600), 160, 104);
+			image(tape, random(100, 900), random(100, 500), 160, 104);
 			savedArtboard = get(100, 100, 1100, 700);
 		}
-		if(mouseX > 500 && mouseX < 800 && mouseY > 150 && mouseY < 450){
+		if (mouseX > 500 && mouseX < 800 && mouseY > 150 && mouseY < 450){
 			background(0);
 			home();
-			image(orangefruit, random(100, 900), random(100, 600), 150, 150);
+			image(orangefruit, random(100, 900), random(100, 500), 150, 150);
 			savedArtboard = get(100, 100, 1100, 700);
 		}
-		if(mouseX > 800 && mouseX < 1140 && mouseY > 130 && mouseY < 470){
+		if (mouseX > 800 && mouseX < 1140 && mouseY > 130 && mouseY < 470){
 			background(0);
 			home();
-			image(salt, random(100, 900), random(100, 600), 150, 150);
+			image(salt, random(100, 900), random(100, 500), 150, 150);
 			savedArtboard = get(100, 100, 1100, 700);
 		}
-		if(mouseX > 1150 && mouseX < 1400 && mouseY > 160 && mouseY < 410){
+		if (mouseX > 1150 && mouseX < 1400 && mouseY > 160 && mouseY < 410){
 			background(0);
 			home();
-			image(knife, random(100, 900), random(100, 600), 150, 150);
+			image(knife, random(100, 900), random(100, 500), 150, 150);
 			savedArtboard = get(100, 100, 1100, 700);
 		}
-		if(mouseX > 1500 && mouseX < 1820 && mouseY > 160 && mouseY < 436){
+		if (mouseX > 1500 && mouseX < 1820 && mouseY > 160 && mouseY < 436){
 			background(0);
 			home();
-			image(necklace, random(100, 900), random(100, 600), 160, 138);
+			image(necklace, random(100, 900), random(100, 500), 160, 138);
 			savedArtboard = get(100, 100, 1100, 700);
 		}
-		if(mouseX > 200 && mouseX < 304 && mouseY > 550 && mouseY < 870){
+		if (mouseX > 200 && mouseX < 304 && mouseY > 550 && mouseY < 870){
 			background(0);
 			home();
-			image(tulip, random(100, 900), random(100, 600), 52, 160);
+			image(tulip, random(100, 900), random(100, 500), 52, 160);
 			savedArtboard = get(100, 100, 1100, 700);
 		}
-		if(mouseX > 500 && mouseX < 810 && mouseY > 550 && mouseY < 860){
+		if (mouseX > 500 && mouseX < 810 && mouseY > 550 && mouseY < 860){
 			background(0);
 			home();
-			image(lipgloss, random(100, 900), random(100, 600), 150, 150);
+			image(lipgloss, random(100, 900), random(100, 500), 150, 150);
 			savedArtboard = get(100, 100, 1100, 700);
 		}
-		if(mouseX > 800 && mouseX < 1110 && mouseY > 550 && mouseY < 860){
+		if (mouseX > 800 && mouseX < 1110 && mouseY > 550 && mouseY < 860){
 			background(0);
 			home();
-			image(pencil, random(100, 900), random(100, 600), 150, 150);
+			image(pencil, random(100, 900), random(100, 500), 150, 150);
 			savedArtboard = get(100, 100, 1100, 700);
 		}
-		if(mouseX > 1150 && mouseX < 1460 && mouseY > 550 && mouseY < 860){
+		if (mouseX > 1150 && mouseX < 1460 && mouseY > 550 && mouseY < 860){
 			background(0);
 			home();
-			image(mirror, random(100, 900), random(100, 600), 150, 150);
+			image(mirror, random(100, 900), random(100, 500), 150, 150);
 			savedArtboard = get(100, 100, 1100, 700);
 		}
-		if(mouseX > 1500 && mouseX < 1810 && mouseY > 550 && mouseY < 860){
+		if (mouseX > 1500 && mouseX < 1810 && mouseY > 550 && mouseY < 860){
 			background(0);
 			home();
-			image(usb, random(100, 900), random(100, 600), 150, 150);
+			image(usb, random(100, 900), random(100, 500), 150, 150);
 			savedArtboard = get(100, 100, 1100, 700);
 		}
 	}
+	/*else if (screen == "finalCollage"){
+		if (mouseX > 430 && mouseX < 639 && mouseY > 825 && mouseY <855){
+			
+		}
+	}
+	*/
 }
 	
 
@@ -527,6 +564,29 @@ function object(){
 	image (usb, 1500, 550, 310, 310);
 }
 
+function finalCollage(){
+	screen = "finalCollage";
+	
+	background(0);
+	fill(255);
+	rect(430, 110, 1100, 700);
+
+	if (finalArtboard){
+		image(finalArtboard, 430, 110, 1100, 700);
+	}
+
+	fill(255);
+	noStroke();
+	rect(430, 825, 209, 30);
+	
+	fill(0);//generate title
+	noStroke();
+	textFont('Helvetica Neue');
+	textSize(25);
+	textStyle(NORMAL);
+	text('GENERATE TITLE', 434, 850);
+}
+
 /*function (){
 	
 	fill(255);
@@ -535,9 +595,5 @@ function object(){
 	textStyle(BOLD);
 	text('SHAPES', 100, 80);
 
-	image(pinkheart, 100, 150, 300, 260);
-	image(redheart, 450, 150, 300, 300);
-	image(star, 800, 140, 290, 290);
-	image (speech, )
 }
 */
