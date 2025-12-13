@@ -1,6 +1,6 @@
 let screen = "home";
-let bgColorScreen = false;
-let bgImageScreen;
+let savedArtboard;
+
 
 let red;
 let orange;
@@ -63,6 +63,7 @@ function setup() {
 	artboardColor = color(255);
 	
 	home();
+	
 	red = color(255, 33, 74);
 	orange = color(245, 130, 64);
 	yellow = color(255, 230, 102);
@@ -75,7 +76,7 @@ function setup() {
 	purple = color(141, 91, 189);
 	fuscia = color(239, 127, 245);
 	pink = color(217, 78, 166);
-	
+
 }
 
 function draw() {
@@ -88,6 +89,10 @@ function home(){
 	fill(artboardColor);
 	noStroke();
 	rect(100, 100, 1100, 700);//artboard
+	
+	if (savedArtboard){
+		image(savedArtboard, 100, 100, 1100, 700);
+	}
 
 	image(bgColor, 1250, 100, 100, 100);//background color
 	image(bgImage,1250, 250, 100, 100)//background images
@@ -231,41 +236,173 @@ function mousePressed(){
 		background(0);
 		home();
 		image(safari, 100, 50, 1100, 800);
+		savedArtboard = get(100, 100, 1100, 700);
 		}
 		if(mouseX > 540 && mouseX < 949 && mouseY > 150 && mouseY < 456){
 		background(0);
 		home();
 		image(lake, 100, 100, 1100, 750);
+		savedArtboard = get(100, 100, 1100, 700);
 		}
 		if(mouseX > 1000 && mouseX < 1409 && mouseY > 150 && mouseY < 456){
 		background(0);
 		home();
 		image(garden, 100, 100, 1100, 750);
+		savedArtboard = get(100, 100, 1100, 700);
 		}
 		if(mouseX > 1500 && mouseX < 1906 && mouseY > 150 && mouseY < 456){
 		background(0);
 		home();
 		image(gov, 100, 100, 1100, 750);
+		savedArtboard = get(100, 100, 1100, 700);
 		}
 		if(mouseX > 100 && mouseX < 506 && mouseY > 650 && mouseY < 838){
 		background(0);
 		home();
 		image(boat, 100, 300, 1100, 509);
+		savedArtboard = get(100, 100, 1100, 700);
 		}
 		if(mouseX > 540 && mouseX < 946 && mouseY > 650 && mouseY < 838){
 		background(0);
 		home();
 		image(ocean, 100, 300, 1100, 509);
+		savedArtboard = get(100, 100, 1100, 700);
 		}
 		if(mouseX > 1040 && mouseX < 1407 && mouseY > 590 && mouseY < 840){
 		background(0);
 		home();
 		image(field, 100, 55, 1100, 749);
+		savedArtboard = get(100, 100, 1100, 700);
 		}
 		if(mouseX > 1500 && mouseX < 1860 && mouseY > 550 && mouseY < 838){
 		background(0);
 		home();
 		image(balcony, 100, 100, 1100, 750);
+		savedArtboard = get(100, 100, 1100, 700);
+		}
+	}
+	else if (screen == "people"){
+		if(mouseX > 100 && mouseX < 304 && mouseY> 150 && mouseY < 516){
+			background(0);
+			home();
+			image(climber, random(100, 900), random(100, 600), 204, 366);
+			savedArtboard = get(100, 100, 1100, 700);
+		}
+		if(mouseX > 400 && mouseX < 664 && mouseY> 200 && mouseY < 525){
+			background(0);
+			home();
+			image(laundry, random(100,900), random(100, 600), 264, 325);
+			savedArtboard = get(100, 100, 1100, 700);
+		}
+		if(mouseX > 750 && mouseX < 954 && mouseY> 150 && mouseY < 515){
+			background(0);
+			home();
+			image(king, random(100,900), random(100, 600), 204, 365);
+			savedArtboard = get(100, 100, 1100, 700);
+		}
+		if(mouseX > 1050 && mouseX < 1349 && mouseY> 170 && mouseY < 486){
+			background(0);
+			home();
+			image(weds, random(100,900), random(100, 600), 299, 316);
+			savedArtboard = get(100, 100, 1100, 700);
+		}
+		if(mouseX > 1450 && mouseX < 1739 && mouseY> 150 && mouseY < 500){
+			background(0);
+			home();
+			image(horse, random(100,900), random(100, 600), 289, 350);
+			savedArtboard = get(100, 100, 1100, 700);
+		}
+		if(mouseX > 100 && mouseX < 390 && mouseY> 650 && mouseY < 801){
+			background(0);
+			home();
+			image(seal, random(100,900), random(100, 600), 290, 151);
+			savedArtboard = get(100, 100, 1100, 700);
+		}
+		if(mouseX > 400 && mouseX < 737 && mouseY> 600 && mouseY < 822){
+			background(0);
+			home();
+			image(skiier, random(100,900), random(100, 600), 337, 222);
+			savedArtboard = get(100, 100, 1100, 700);
+		}
+		if(mouseX > 750 && mouseX < 1022 && mouseY> 550 && mouseY < 873){
+			background(0);
+			home();
+			image(sitter, random(100, 900), random(100, 600), 272, 323);
+			savedArtboard = get(100, 100, 1100, 700);
+		}
+		if(mouseX > 1150 && mouseX < 1416 && mouseY> 600 && mouseY < 782){
+			background(0);
+			home();
+			image(kids, random(100, 900), random(100, 600), 266, 182);
+			savedArtboard = get(100, 100, 1100, 700);
+		}
+		if(mouseX > 1500 && mouseX < 1778 && mouseY> 500 && mouseY < 890){
+			background(0);
+			home();
+			image(stand, random(100, 900), random(100, 600), 278, 390);
+			savedArtboard = get(100, 100, 1100, 700);
+		}
+	}
+	else if(screen == "object"){
+		if(mouseX > 100 && mouseX <420 && mouseY > 200 && mouseY < 409){
+			background(0);
+			home();
+			image(tape, random(100, 900), random(100, 600), 160, 104);
+			savedArtboard = get(100, 100, 1100, 700);
+		}
+		if(mouseX > 500 && mouseX < 800 && mouseY > 150 && mouseY < 450){
+			background(0);
+			home();
+			image(orangefruit, random(100, 900), random(100, 600), 150, 150);
+			savedArtboard = get(100, 100, 1100, 700);
+		}
+		if(mouseX > 800 && mouseX < 1140 && mouseY > 130 && mouseY < 470){
+			background(0);
+			home();
+			image(salt, random(100, 900), random(100, 600), 150, 150);
+			savedArtboard = get(100, 100, 1100, 700);
+		}
+		if(mouseX > 1150 && mouseX < 1400 && mouseY > 160 && mouseY < 410){
+			background(0);
+			home();
+			image(knife, random(100, 900), random(100, 600), 150, 150);
+			savedArtboard = get(100, 100, 1100, 700);
+		}
+		if(mouseX > 1500 && mouseX < 1820 && mouseY > 160 && mouseY < 436){
+			background(0);
+			home();
+			image(necklace, random(100, 900), random(100, 600), 160, 138);
+			savedArtboard = get(100, 100, 1100, 700);
+		}
+		if(mouseX > 200 && mouseX < 304 && mouseY > 550 && mouseY < 870){
+			background(0);
+			home();
+			image(tulip, random(100, 900), random(100, 600), 52, 160);
+			savedArtboard = get(100, 100, 1100, 700);
+		}
+		if(mouseX > 500 && mouseX < 810 && mouseY > 550 && mouseY < 860){
+			background(0);
+			home();
+			image(lipgloss, random(100, 900), random(100, 600), 150, 150);
+			savedArtboard = get(100, 100, 1100, 700);
+		}
+		if(mouseX > 800 && mouseX < 1110 && mouseY > 550 && mouseY < 860){
+			background(0);
+			home();
+			image(pencil, random(100, 900), random(100, 600), 150, 150);
+			savedArtboard = get(100, 100, 1100, 700);
+		}
+		if(mouseX > 1150 && mouseX < 1460 && mouseY > 550 && mouseY < 860){
+			background(0);
+			home();
+			image(mirror, random(100, 900), random(100, 600), 150, 150);
+			savedArtboard = get(100, 100, 1100, 700);
+		}
+		if(mouseX > 1500 && mouseX < 1810 && mouseY > 550 && mouseY < 860){
+			background(0);
+			home();
+			image(usb, random(100, 900), random(100, 600), 150, 150);
+			savedArtboard = get(100, 100, 1100, 700);
 		}
 	}
 }
@@ -349,7 +486,7 @@ function backgroundImage(){
 }
 
 function people(){
-	//screen == "people";
+	screen = "people";
 	
 	fill(255);
 	textFont('Helvetica Neue');
@@ -370,7 +507,7 @@ function people(){
 }
 
 function object(){
-	//screen == "object";
+	screen = "object";
 	
 	fill(255);
 	textFont('Helvetica Neue');
