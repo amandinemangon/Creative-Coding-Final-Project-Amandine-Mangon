@@ -644,3 +644,7 @@ function typeText(){
 	textStyle(BOLD);
 	text('', 100, 80);
 }
+
+function makeTitle(){
+	let noun = RiTa.randomWord()
+}
