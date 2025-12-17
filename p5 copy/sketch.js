@@ -1,8 +1,7 @@
 let screen = "home";
 let savedArtboard;
 let finalArtboard;
-let snipSound;
-
+let customWords = "";
 
 let red;
 let orange;
@@ -51,6 +50,7 @@ function preload(){
 	field = loadImage ('field.png');
 	balcony = loadImage ('balcony.png');
 	snipSound = loadSound('snip.mp3');
+	customText = loadImage('abc.png');
 }
 
 function setup() {
@@ -136,16 +136,16 @@ function home(){
 		text('OBJECTS', 1370, 610);
 	}
 	
-	/*image(shapes, 1250, 700, 100, 100);//shapes
+	image(customText, 1250, 700, 100, 100);//text
 	if (mouseX > 1250 && mouseX < 1350 && mouseY > 700 && mouseY < 800){
 		fill(255);
 		noStroke();
-		textFont('Helvetica Neue');//shapes
+		textFont('Helvetica Neue');//text
 		textSize(35);
 		textStyle(NORMAL);
-		text('SHAPES', 1370, 760);
+		text('CUSTOM TEXT', 1370, 760);
 	}
-		*/
+
 	
 
 	fill(255);
@@ -157,25 +157,25 @@ function home(){
 
 	fill(255);//reset rect
 	noStroke();
-	rect(100, 825, 85, 30);
+	rect(100, 825, 90, 30);
 	
 	fill(0);
 	noStroke();
 	textFont('Helvetica Neue');//reset
 	textSize(25);
-	textStyle(NORMAL);
+	textStyle(BOLD);
 	text('RESET', 103, 850);
 
 	fill(255);//done button
 	noStroke();
-	rect(1125, 825, 75, 30);
+	rect(1120, 825, 80, 30);
 
 	fill(0);//done text
 	noStroke();
-	textFont('Helvetica Neue');//reset
+	textFont('Helvetica Neue');//done
 	textSize(25);
-	textStyle(NORMAL);
-	text('DONE', 1127, 850);
+	textStyle(BOLD);
+	text('DONE', 1123, 850);
 }
 
 function mousePressed(){
@@ -203,12 +203,32 @@ function mousePressed(){
 		}
 		if (mouseX > 1250 && mouseX < 1350 && mouseY > 700 && mouseY < 800){
 			background(0);
-			shape();
-		}
-		if (mouseX > 100 && mouseX < 210 && mouseY >825 && mouseY < 855){//reset page --> turns white
-			fill(255);
+			fill(artboardColor);
 			noStroke();
 			rect(100, 100, 1100, 700);
+
+			if(savedArtboard){
+				image(savedArtboard, 100, 100, 1100, 700);
+			}
+			
+			fill(255);
+			textFont("helvetica Neue");
+			textSize(48);
+			textStyle(BOLD);
+			
+			let t = prompt("TYPE YOUR TEXT:");
+			if (t === null) return;
+			
+			text(t, random(200, 900), random(200, 500));
+			
+			savedArtboard = get(100, 100, 1100, 700);
+			home();
+		}
+		if (mouseX > 100 && mouseX < 210 && mouseY >825 && mouseY < 855){//reset page --> turns white\
+			savedArtboard = undefined;
+			artboardColor = color(255);
+			background(0);
+			home();
 		}
 		if (mouseX > 1125 && mouseX < 1200 && mouseY > 825 && mouseY < 855){
 			finalArtboard = get(100, 100, 1100, 700);
@@ -302,13 +322,13 @@ function mousePressed(){
 			background(0);
 			home();
 			image(gov, 100, 100, 1100, 700);
-		savedArtboard = get(100, 100, 1100, 700);
+			savedArtboard = get(100, 100, 1100, 700);
 		}
 		if (mouseX > 100 && mouseX < 506 && mouseY > 650 && mouseY < 838){
 			background(0);
 			home();
 			image(boat, 100, 300, 1100, 509);
-		savedArtboard = get(100, 100, 1100, 700);
+			savedArtboard = get(100, 100, 1100, 700);
 		}
 		if (mouseX > 540 && mouseX < 946 && mouseY > 650 && mouseY < 838){
 			background(0);
@@ -453,12 +473,13 @@ function mousePressed(){
 			savedArtboard = get(100, 100, 1100, 700);
 		}
 	}
-	/*else if (screen == "finalCollage"){
-		if (mouseX > 430 && mouseX < 639 && mouseY > 825 && mouseY <855){
-			
+	else if (screen == "finalCollage"){
+		if (mouseX > 1145 && mouseX < 1530 && mouseY > 825 && mouseY < 855){
+			background(0);
+			screen = "home";
+			home();
 		}
 	}
-	*/
 }
 	
 
@@ -594,23 +615,32 @@ function finalCollage(){
 
 	fill(255);
 	noStroke();
-	rect(430, 825, 209, 30);
+	rect(430, 825, 220, 30);
 	
 	fill(0);//generate title
 	noStroke();
 	textFont('Helvetica Neue');
 	textSize(25);
-	textStyle(NORMAL);
+	textStyle(BOLD);
 	text('GENERATE TITLE', 434, 850);
+
+	fill(255);//home button
+	noStroke();
+	rect(1445, 825, 85, 30);
+
+	fill(0);//home text
+	noStroke();
+	textFont('Helvetica Neue');//home
+	textSize(25);
+	textStyle(BOLD);
+	text('HOME', 1448, 850);
 }
 
-/*function (){
+function typeText(){
 	
 	fill(255);
 	textFont('Helvetica Neue');
 	textSize(50);
 	textStyle(BOLD);
-	text('SHAPES', 100, 80);
-
+	text('', 100, 80);
 }
-*/
