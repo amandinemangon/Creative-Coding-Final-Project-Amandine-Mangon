@@ -1,7 +1,7 @@
 let screen = "home";
 let savedArtboard;
 let finalArtboard;
-let customWords = "";
+let generatedTitle = "'TITLE'";
 
 let red;
 let orange;
@@ -79,6 +79,8 @@ function setup() {
 function draw() {
 	if(screen == "home"){
 		home();
+	} else if(screen == "finalCollage"){
+		finalCollage();
 	}
 }
 
@@ -232,7 +234,7 @@ function mousePressed(){
 		}
 		if (mouseX > 1125 && mouseX < 1200 && mouseY > 825 && mouseY < 855){
 			finalArtboard = get(100, 100, 1100, 700);
-			finalCollage();
+			screen = "finalCollage";
 		}
 	}
 
@@ -476,20 +478,10 @@ function mousePressed(){
 	else if (screen == "finalCollage"){
 		if (mouseX > 1145 && mouseX < 1530 && mouseY > 825 && mouseY < 855){
 			background(0);
-			screen = "home";
 			home();
 		}
 		if (mouseX > 430 && mouseX < 650 && mouseY > 825 && mouseY < 855){
-			image (finalArtboard, 430, 110, 1100, 700);
-
-			fill(0);
-			textFont("Helvetica Neue");
-			textSize(48);
-			textStyle(BOLD);
-
-		text('"' + generateTitle() + '"', 430, 20);
-
-		finalArtboard = get(430, 110, 1100, 700);
+			generatedTitle = '"' + generateTitle().toUpperCase() + '"';
 		}
 	}
 }
@@ -615,7 +607,6 @@ function object(){
 }
 
 function finalCollage(){
-	screen = "finalCollage";
 	
 	background(0);
 	fill(255);
@@ -646,6 +637,12 @@ function finalCollage(){
 	textSize(25);
 	textStyle(BOLD);
 	text('HOME', 1448, 850);
+
+	fill(255);
+	textFont("Helvetica Neue");
+	textSize(48);
+	textStyle(BOLD);
+	text(generatedTitle, 430, 100);
 }
 
 function typeText(){
@@ -658,5 +655,5 @@ function typeText(){
 }
 
 function generateTitle(){
-	return random([RiTa.randomWord({ pos: "nn"}) + " THAT " + RiTa.randomWord({ pos: "vb"}), Rita.randomWord({ pos: "nn"}) + " IS " + RiTa.randomWord({pos: "jj"}), "IT IS " + RiTa.randomWord({ pos: "jj"})]);
+	return random([RiTa.randomWord({ pos: "nn"}) + " THAT " + RiTa.randomWord({ pos: "vb"}), RiTa.randomWord({ pos: "nn"}) + " IS " + RiTa.randomWord({pos: "jj"}), "IT IS " + RiTa.randomWord({ pos: "jj"})]);
 }
