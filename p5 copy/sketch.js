@@ -479,6 +479,18 @@ function mousePressed(){
 			screen = "home";
 			home();
 		}
+		if (mouseX > 430 && mouseX < 650 && mouseY > 825 && mouseY < 855){
+			image (finalArtboard, 430, 110, 1100, 700);
+
+			fill(0);
+			textFont("Helvetica Neue");
+			textSize(48);
+			textStyle(BOLD);
+
+		text('"' + generateTitle() + '"', 430, 20);
+
+		finalArtboard = get(430, 110, 1100, 700);
+		}
 	}
 }
 	
@@ -645,6 +657,6 @@ function typeText(){
 	text('', 100, 80);
 }
 
-function makeTitle(){
-	let noun = RiTa.randomWord()
+function generateTitle(){
+	return random([RiTa.randomWord({ pos: "nn"}) + " THAT " + RiTa.randomWord({ pos: "vb"}), Rita.randomWord({ pos: "nn"}) + " IS " + RiTa.randomWord({pos: "jj"}), "IT IS " + RiTa.randomWord({ pos: "jj"})]);
 }
