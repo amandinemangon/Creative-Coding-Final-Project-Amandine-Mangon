@@ -655,5 +655,5 @@ function typeText(){
 }
 
 function generateTitle(){
-	return random([RiTa.randomWord({ pos: "nn"}) + " THAT " + RiTa.randomWord({ pos: "vb"}), RiTa.randomWord({ pos: "nn"}) + " IS " + RiTa.randomWord({pos: "jj"}), "IT IS " + RiTa.randomWord({ pos: "jj"})]);
+	RiTa.randomWord({ pos: "nn"}) + " THAT " + RiTa.randomWord({ pos: "vb"});
 }
