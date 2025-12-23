@@ -644,7 +644,7 @@ function finalCollage(){
 	textFont("Helvetica Neue");
 	textSize(48);
 	textStyle(BOLD);
-	text('"Title"', 430, 100);
+	text('"TITLE"', 430, 100);
 }
 
 function typeText(){
